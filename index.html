@@ -17,16 +17,12 @@
         }
 
         body {
-            /* Глубокий тёплый фон с графикой */
             background: #f7f2ea;
             background-image: 
-                /* Тонкие золотые линии — геометрия */
-                linear-gradient(165deg, transparent 48%, rgba(180, 150, 110, 0.15) 48%, rgba(180, 150, 110, 0.15) 52%, transparent 52%),
-                linear-gradient(195deg, transparent 48%, rgba(180, 150, 110, 0.1) 48%, rgba(180, 150, 110, 0.1) 52%, transparent 52%),
-                /* Лёгкая сетка */
-                repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(160, 140, 110, 0.06) 80px, rgba(160, 140, 110, 0.06) 81px),
-                repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(160, 140, 110, 0.06) 80px, rgba(160, 140, 110, 0.06) 81px),
-                /* Градиентное свечение */
+                linear-gradient(165deg, transparent 48%, rgba(180, 150, 110, 0.12) 48%, rgba(180, 150, 110, 0.12) 52%, transparent 52%),
+                linear-gradient(195deg, transparent 48%, rgba(180, 150, 110, 0.08) 48%, rgba(180, 150, 110, 0.08) 52%, transparent 52%),
+                repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(160, 140, 110, 0.05) 80px, rgba(160, 140, 110, 0.05) 81px),
+                repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(160, 140, 110, 0.05) 80px, rgba(160, 140, 110, 0.05) 81px),
                 radial-gradient(ellipse at 35% 30%, rgba(240, 225, 200, 0.5) 0%, transparent 55%),
                 radial-gradient(ellipse at 70% 65%, rgba(225, 205, 175, 0.4) 0%, transparent 55%);
             font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
@@ -41,12 +37,11 @@
             overflow-x: hidden;
         }
 
-        /* Акцентные геометричные элементы */
         .accent-line {
             position: fixed;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.5;
+            opacity: 0.4;
         }
         .accent-line-1 {
             top: 8%;
@@ -72,18 +67,17 @@
             height: 4px;
             background: #c4a87c;
             border-radius: 50%;
-            opacity: 0.4;
+            opacity: 0.35;
         }
         .accent-dot-1 { top: 12%; right: 15%; }
         .accent-dot-2 { bottom: 18%; left: 12%; }
         .accent-dot-3 { top: 45%; left: 8%; }
 
-        /* Минималистичные веточки — только силуэты */
         .bg-branch {
             position: fixed;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.2;
+            opacity: 0.18;
         }
         .branch-tl {
             top: -20px;
@@ -100,7 +94,6 @@
             transform: rotate(15deg);
         }
 
-        /* КАРТОЧКА */
         .invitation-card {
             position: relative;
             z-index: 2;
@@ -133,6 +126,8 @@
             margin: 0.5rem 0 0;
             color: #4a3726;
             line-height: 1.1;
+            /* Имена не разрываются */
+            white-space: nowrap;
         }
 
         .ampersand {
@@ -150,14 +145,72 @@
             letter-spacing: 1px;
             color: #8b7862;
             margin: 1.4rem 0 0;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
             padding: 0.5rem 2rem;
             border-top: 1px solid #d9c8b0;
             border-bottom: 1px solid #d9c8b0;
             font-style: italic;
         }
 
-        /* ФОТО */
+        .date-block span {
+            white-space: nowrap;
+        }
+
+        .date-dot {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: #b1967c;
+            border-radius: 50%;
+            margin: 0 0.3rem;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        .countdown {
+            margin: 1.8rem 0 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 55px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #5e4632;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: #a3927e;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 0.2rem;
+        }
+
+        .countdown-divider {
+            font-size: 1.5rem;
+            color: #c4a87c;
+            font-weight: 300;
+            opacity: 0.6;
+        }
+
         .photo-modern {
             margin: 2rem auto 0;
             max-width: 320px;
@@ -332,7 +385,6 @@
             gap: 0.4rem;
         }
 
-        /* СКРОМНАЯ КНОПКА "СВЯЗАТЬСЯ С НАМИ" */
         .contact-link {
             margin-top: 1.5rem;
             display: inline-flex;
@@ -358,6 +410,7 @@
             background: rgba(220, 200, 175, 0.2);
         }
 
+        /* ПОДПИСЬ — не разрывается */
         .footer-note {
             margin-top: 1.8rem;
             font-size: 0.9rem;
@@ -365,6 +418,7 @@
             letter-spacing: 0.7px;
             text-transform: uppercase;
             opacity: 0.7;
+            white-space: nowrap;
         }
 
         .leaf-motif {
@@ -396,14 +450,30 @@
             .gift-section {
                 padding: 1rem 0.9rem;
             }
-            .accent-line-1,
-            .accent-line-2 {
-                width: 60px;
+            .countdown {
+                gap: 0.7rem;
+            }
+            .countdown-number {
+                font-size: 1.6rem;
+            }
+            .countdown-divider {
+                font-size: 1.2rem;
             }
             .address-row {
                 flex-direction: column;
                 gap: 0.4rem;
                 text-align: center;
+            }
+            /* На узких экранах разрешаем подписи переноситься */
+            .footer-note {
+                white-space: normal;
+            }
+        }
+
+        /* На очень узких экранах всё же разрешаем именам переноситься */
+        @media (max-width: 380px) {
+            .names {
+                white-space: normal;
             }
         }
     </style>
@@ -413,14 +483,12 @@
 </head>
 <body>
 
-    <!-- Геометричные акценты -->
     <div class="accent-line accent-line-1"></div>
     <div class="accent-line accent-line-2"></div>
     <div class="accent-dot accent-dot-1"></div>
     <div class="accent-dot accent-dot-2"></div>
     <div class="accent-dot accent-dot-3"></div>
 
-    <!-- Силуэтные веточки -->
     <svg class="bg-branch branch-tl" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
         <path d="M15 260 Q30 220 25 170 Q20 130 35 90 Q45 50 30 20" stroke="#a39070" stroke-width="1.5" fill="none" stroke-linecap="round"/>
         <ellipse cx="22" cy="210" rx="14" ry="4" fill="#a39070" transform="rotate(-20 22 210)"/>
@@ -437,7 +505,6 @@
         <ellipse cx="172" cy="225" rx="11" ry="3.5" fill="#a39070" transform="rotate(15 172 225)"/>
     </svg>
 
-    <!-- КАРТОЧКА -->
     <div class="invitation-card">
         <div class="ornament-top">— ✦ —</div>
 
@@ -446,7 +513,32 @@
         <h1 class="names" style="margin-top:0;">Валерия</h1>
 
         <div class="date-block">
-            7 августа 2026 • пятница
+            <span>7 августа 2026</span>
+            <span class="date-dot"></span>
+            <span>пятница</span>
+        </div>
+
+        <!-- ТАЙМЕР -->
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">дней</span>
+            </div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">часов</span>
+            </div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">минут</span>
+            </div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">секунд</span>
+            </div>
         </div>
 
         <div class="photo-modern">
@@ -455,7 +547,7 @@
 
         <div class="details">
             <div class="detail-row">
-                <span class="icon">🥂</span> Сбор гостей <span class="time-highlight">16:15</span>
+                <span class="icon">🥂</span> Сбор гостей <span class="time-highlight">16:00</span>
             </div>
             <div class="detail-row">
                 <span class="icon">🕊️</span> Церемония <span class="time-highlight">17:00</span>
@@ -502,7 +594,6 @@
             <span>✦</span> Мы будем рады разделить этот день с вами <span>✦</span>
         </div>
 
-        <!-- Скромная кнопка связи -->
         <a href="https://t.me/igor_valeria" target="_blank" rel="noopener" class="contact-link">
             ✉ Связаться с нами
         </a>
@@ -512,5 +603,36 @@
         </div>
     </div>
 
+    <script>
+        (function() {
+            const weddingDate = new Date('2026-08-07T17:00:00+03:00');
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = weddingDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+    </script>
 </body>
 </html>
