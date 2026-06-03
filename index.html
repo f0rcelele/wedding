@@ -119,7 +119,6 @@
             opacity: 0.65;
         }
 
-        /* ИМЕНА — всегда столбиком, не разрываются */
         .names-block {
             display: flex;
             flex-direction: column;
@@ -145,7 +144,6 @@
             margin: 0.1rem 0;
         }
 
-        /* ДАТА — вертикальная черта вместо точки */
         .date-block {
             font-size: 1.2rem;
             font-weight: 350;
@@ -176,7 +174,6 @@
             opacity: 0.5;
         }
 
-        /* ТАЙМЕР — компактный */
         .countdown {
             margin: 1.4rem 0 0.2rem;
             display: flex;
@@ -416,7 +413,7 @@
             background: rgba(220, 200, 175, 0.2);
         }
 
-        /* ПОДПИСЬ */
+        /* ПОДПИСЬ — всё в одной строке */
         .footer-note {
             margin-top: 1.5rem;
             font-size: 0.85rem;
@@ -424,14 +421,18 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             opacity: 0.7;
-            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            flex-wrap: nowrap;
         }
 
         .leaf-motif {
             font-size: 1.1rem;
             opacity: 0.45;
-            margin: 0 0.15rem;
             color: #a58e74;
+            flex-shrink: 0;
         }
 
         @keyframes fadeGrace {
@@ -439,7 +440,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* ДЕСКТОП: немного крупнее */
+        /* ДЕСКТОП */
         @media (min-width: 600px) {
             .invitation-card {
                 padding: 2.8rem 2.4rem;
@@ -472,11 +473,8 @@
             }
         }
 
-        /* Очень узкие экраны — разрешаем перенос подписи */
+        /* Очень узкие экраны */
         @media (max-width: 370px) {
-            .footer-note {
-                white-space: normal;
-            }
             .countdown {
                 gap: 0.4rem;
             }
@@ -488,6 +486,13 @@
             }
             .countdown-divider {
                 font-size: 1rem;
+            }
+            .footer-note {
+                font-size: 0.75rem;
+                gap: 0.2rem;
+            }
+            .leaf-motif {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -518,21 +523,18 @@
     <div class="invitation-card">
         <div class="ornament-top">— ✦ —</div>
 
-        <!-- ИМЕНА — строго столбиком -->
         <div class="names-block">
             <h1 class="names">Игорь</h1>
             <span class="ampersand">&</span>
             <h1 class="names">Валерия</h1>
         </div>
 
-        <!-- ДАТА — с вертикальной чертой -->
         <div class="date-block">
             <span>7 августа 2026</span>
             <span class="date-separator"></span>
             <span>пятница</span>
         </div>
 
-        <!-- ТАЙМЕР — компактный -->
         <div class="countdown" id="countdown">
             <div class="countdown-item">
                 <span class="countdown-number" id="days">00</span>
@@ -612,8 +614,11 @@
             ✉ Связаться с нами
         </a>
 
+        <!-- ПОДПИСЬ — все элементы в одной строке -->
         <div class="footer-note">
-            <span class="leaf-motif">🌿</span> с любовью, Игорь & Валерия <span class="leaf-motif">🌿</span>
+            <span class="leaf-motif">🌿</span>
+            <span>с любовью, Игорь & Валерия</span>
+            <span class="leaf-motif">🌿</span>
         </div>
     </div>
 
